@@ -1,0 +1,16 @@
+main: tld.example.myplugin.Main
+name: WarpGUI
+version: 0.0.1
+author: KingCloudNinja
+description: WarpGUI Plugin
+commands:
+  warp:
+    description: Server Essentials Command
+    usage: 
+    permission: server.all
+    permission-message: Unknown command. Type "/help" for help.
+  warps:
+    description: Server Essentials Command
+    usage: 
+    permission: server.all
+    permission-message: Unknown command. Type "/help" for help.
