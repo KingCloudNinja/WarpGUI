@@ -44,10 +44,16 @@ public class Main extends JavaPlugin implements Listener {
     		storeMeta.setDisplayName(ChatColor.GREEN + "Shop");
     		store.setItemMeta(storeMeta);
     		
+    		ItemStack bulk = new ItemStack(Material.MILK_BUCKET);
+    		ItemMeta bulkMeta = bulk.getItemMeta();
+    		bulkMeta.setDisplayName(ChatColor.GREEN + "Bulk");
+    		bulk.setItemMeta(bulkMeta);
+    		
     		i.setItem(4, spawn);
     		i.setItem(12, fps);
     		i.setItem(14, store);	
     		i.setItem(20, crates);
+    		i.setItem(24, bulk);
     		
     		
     		player.openInventory(i);
@@ -81,6 +87,12 @@ public class Main extends JavaPlugin implements Listener {
                     	 	player.closeInventory();
                     	 	player.performCommand("ewarp shop");
                     	 	}
+                    	 	if (inventory.getName().equals("Warps")) {
+                        	 	if (clicked.getType() == Material.MILK_BUCKET) {
+                        	 	event.setCancelled(true);
+                        	 	player.closeInventory();
+                        	 	player.performCommand("ewarp bulk");
+                    	 	}
         	 		if (inventory.getName().equals("Warps")) {
         	 			if (clicked.getType() == Material.AIR){
             	 		event.setCancelled(true);
@@ -92,6 +104,7 @@ public class Main extends JavaPlugin implements Listener {
         	 	}
             	 	}
         	 	}
+    	 	}
     	 	}
     	}
 
